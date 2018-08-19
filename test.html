@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TP Panier</title>
+    <link rel="stylesheet" href="test.css">
+    <!--Poppins-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="main.js"></script>
+</head>
+<body>
+
+  <button class="myBtn" id="btn">PRODUIT <i class="fas fa-shopping-basket"></i></button>
+  <h1>TP - Gestion de stock</h1>
+
+  <div class="global">
+     <!--Div de droite-->
+  <div class="ajouterProduits">
+     <h3>Ajouter un produit</h3>
+
+     <div class="infoProduit">
+       <div class="lg">
+         <label for="nomProduit">Nom du produit :</label>
+         <input type="text" id="productName">
+       </div>
+
+       <div class="md">
+         <div>
+           <label for="prix">Prix :</label>
+           <input type="number" min="0" max="1000" value="0" class="mid" id="productPrice">
+         </div>
+         <div>
+           <label for="ref">REF :</label>
+           <input type="text" class="mid" id="randomRef">
+         </div>
+       </div>
+       <div class="lg">
+         <label for="description">Description : <span class="court">(100 caratères max)</span></label>
+         <input type="text" id="productDescription">
+       </div>
+
+       <button type="button" id="addProduct">AJOUTER</button>
+     </div>
+
+   </div>
+<!--Div de gauche-->
+   <div class="produits">
+     <h3>Vos produits</h3>
+     <hr>
+   </div>
+<table>
+
+</table>
+</div>
+
+
+  <footer>
+    <p>Made with <i class="far fa-heart"></i> by Julie | Siriné | Cindy.</p>
+  </footer>
+</body>
+</html>

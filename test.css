@@ -1,0 +1,277 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    background: #fff;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+h1{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 24px;
+}
+/*Barre de Scroll*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/*Bouton*/
+button.myBtn {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: none;
+  border-radius: 50px;
+  border: 1px solid #000;
+  color: #000;
+  /* cursor: crosshair; */
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  outline: none;
+  overflow: hidden;
+  padding: 24px 48px;
+  text-transform: uppercase;
+  transition: 0.8s ease-out;
+}
+
+button.myBtn:after {
+    background: #000;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transition: top 0.8s ease-out;
+    z-index: -1;
+}
+
+button.myBtn:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+button.myBtn:hover:after {
+    top: 0;
+}
+
+/*Produits*/
+
+/*Div Global*/
+.global {
+  border-radius: 30px;
+  box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
+  height:540px;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: visibility 0s linear 0s, opacity 2s;
+  visibility: hidden;
+  width:800px;
+}
+.global h3{
+  margin: 30px auto;
+  text-align: left;
+  font-weight: 200;
+  font-size: 19px;
+  font-size: 1.2rem;
+}
+/*Div de gauche*/
+div.produits{
+  height:100%;
+  width:50%;
+  padding-left:25px;
+  padding-right:25px;
+  box-sizing:border-box;
+  background-color: #fff;
+  float: left;
+  border-top-left-radius:30px;
+  border-bottom-left-radius:30px;
+  overflow-y: scroll;
+}
+
+div.produits h3{
+  text-align: center;
+  margin-bottom: 15px;
+}
+hr{
+  width: 200px;
+  margin: auto;
+}
+/*Div de droite*/
+div.ajouterProduits{
+  background:rgb(41, 41, 41);
+  height:100%;
+  width:50%;
+  color:#eee;
+  font-size:14px;
+  font-size:.9rem;
+  padding-left:25px;
+  padding-right:25px;
+  border-top-right-radius:30px;
+  border-bottom-right-radius:30px;
+  float: right;
+}
+div.infoProduit{
+  width: 100%;
+  height: 100%;
+  margin-top: 60px;
+}
+label {
+  font-weight: 200;
+}
+::placeholder{
+  font-size: 14px;
+}
+
+/*Prix + Ref*/
+div.md{
+  width: 100%;
+  height: 80px;
+}
+div.md > div{
+  width: 48%;
+}
+div.md div:first-child{
+  float: left;
+}
+div.md div:last-child{
+  float: right;
+}
+input {
+  background:rgba(255,255,255,0.1);
+  line-height:1.5em;
+  /* font-size:20px; */
+  font-size: 15px;
+  height: 40px;
+  border:none;
+  padding:5px 10px 5px 10px;
+  color:#fff;
+  box-sizing:border-box;
+  width:100%;
+  margin: 10px auto;
+  font-weight: 200;
+}
+
+input{
+  width: 100%;
+}
+input .mid:first-child{
+  float: left;
+}
+input .mid:last-child{
+  float: left;
+}
+div.global div.lg{
+  width: 100%;
+  height: auto;
+}
+/*Bouton*/
+div.ajouterProduits button{
+  width: 100%;
+  height: 50px;
+  margin: 20px auto;
+  border: 2px solid #949494;
+  border-radius: 5px;
+  color: #fff;
+  background: none;
+  cursor: pointer;
+  letter-spacing: 3px;
+}
+span.court{
+  font-style: italic;
+  color: grey;
+  font-size: 13px;
+  font-family: sans-serif;
+}
+div.ajouterProduits button:hover{
+  background-color: #fff;
+  color: #000;
+  border: none;
+  transition: background-color 300ms ease-in;
+}
+/*Media Query*/
+@media screen and (max-width: 750px) {
+  body{
+    overflow-y: scroll;
+  }
+  h1{
+    margin: 10px auto;
+  }
+  .global {
+    width: 100%;
+    height: auto;
+    display:block;
+    border-radius:0px;
+  }
+  .ajouterProduits {
+    width:100%;
+    height:auto;
+    padding-bottom:100px;
+    border-radius:0px;
+  }
+  .produits {
+    width:100%;
+    height:auto;
+    padding-bottom:100px;
+    border-radius:0px;
+  }
+  .pay-btn {
+    border-radius:0px;
+  }
+}
+
+.hidden{
+  opacity: 0;
+  transition: visibility 0s linear 400ms, opacity 400ms;
+  visibility: hidden;
+}
+.visibility{
+  opacity: 1;
+  transition-delay: 800ms;
+  visibility: visible;
+}
+
+
+/*Footer*/
+footer{
+  height: 50px;
+  /* background-color: red; */
+  position: absolute;
+  float: left;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 16px;
+  width: 100%;
+}
+footer p {
+  text-align: center;
+  line-height: 50px;
+}
