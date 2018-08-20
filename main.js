@@ -1,6 +1,6 @@
-(function global() {
+ (function global() {
 
-var global, bouton, name, price, ref, createRandom, description, ajouter, validation, reset;
+var global, bouton, name, price, ref, createRandom, description, ajouter, validation, reset, tableur;
 
 // Fait disparaitre le bouton et apparaitre le formulaire
 var fadeOut = function fadeOut() {
@@ -23,25 +23,44 @@ var CreateLine = function CreateLine(nom, prix, reference, details) {
   this.details = description;
 }
 
-// Recupère les value du tableau
-var addTable = function addTable(e) {
+// Recupère les value du formulaire
+var addTable = function addTable() {
+  name = document.getElementById('productName').value;
+  price = document.getElementById('productPrice').value;
+  ref = document.getElementById('randomRef').value;
+  description = document.getElementById('productDescription').value;
   if (name == "" || price == "" || description == "") {
     return window.alert("Merci de remplir tout les champs")
   } else {
-    name = document.getElementById('productName').value;
-    price = document.getElementById('productPrice').value;
-    ref = document.getElementById('randomRef').value;
-    description = document.getElementById('productDescription').value;
     var p1 = new CreateLine(name, price, ref, description);
     tableau.push(p1);
-    writeNewLine();
+}
+    addPanier();
+    console.log(tableau);
     eraseAll();
+};
+
+function addPanier() {
+  // ajout dans le Panier
+  var tablo = document.getElementById("tablo");
+  var ligne = document.createElement('tr');
+  ligne.classeName='row';
+  var ligneTablo = tablo.appendChild(ligne);
+  ligneTablo.innerHTML += '<td>modifier</td>'+'<td>supprimer</td>'+
+  '<td>'+name+'</td>'+'<td>'+price+'</td>'+'<td>'+ref+'</td>'+'<td>'+description+'</td>'
+
+  var panier = document.getElementById('panier');
+  panier.onclick = function () {
+    var tablo = document.getElementById("tablo");
+    global.classList.remove('visibility');
+    global.classList.add('hidden');
+    tablo.classList.add('visibility');
   };
 };
 
 //Vide les input pour une nouvelle saisie
 var eraseAll = function eraseAll () {
-  document.getElementById('productName').value = "";
+  name = document.getElementById('productName').value = "";
   price = document.getElementById('productPrice').value = "";
   description = document.getElementById('productDescription').value = ""
   addRandom()
@@ -49,9 +68,6 @@ var eraseAll = function eraseAll () {
 
 var tableau = [];
 
-var writeNewLine = function writeNewLine () {
-  console.log(tableau);
-};
 
 function start() {
   global = document.querySelector('.global');
@@ -59,10 +75,8 @@ function start() {
   bouton.addEventListener("click", fadeOut);
 
   bouton.addEventListener('click', addRandom);
-
   ajouter = document.getElementById('addProduct')
   validation = ajouter.addEventListener('click', addTable)
-
 }
 
 

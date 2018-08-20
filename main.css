@@ -1,0 +1,361 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    background: #fff;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+h1{
+    font-size: 24px;
+    font-weight: 300;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Ajout Siriné*/
+#tablo{
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+
+#tablo th{
+  border: 3px solid black;
+  height: 50px;
+  min-width: 100px;
+  max-width: auto;
+}
+
+#tablo td{
+  border: 3px solid black;
+  min-height: 60px;
+  max-height: auto;
+  min-width: 100px;
+  max-width: 500px;
+  text-align: center;
+}
+
+#tablo tr {
+  border: 3px solid black;
+}
+
+/*Barre de Scroll*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/*Bouton*/
+button.myBtn {
+  /* cursor: crosshair; */
+  background: none;
+  border-radius: 50px;
+  border: 1px solid #000;
+  color: #000;
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  left: 50%;
+  letter-spacing: 6px;
+  outline: none;
+  overflow: hidden;
+  padding: 24px 48px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.8s ease-out;
+}
+
+button.myBtn:after {
+    background: #000;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transition: top 0.8s ease-out;
+    z-index: -1;
+}
+
+button.myBtn:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+button.myBtn:hover:after {
+    top: 0;
+}
+
+/*Produits*/
+
+/*Div Global*/
+.global {
+  border-radius: 30px;
+  box-shadow: 0px 15px 50px 10px rgba(0, 0, 0, 0.2);
+  height:540px;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: visibility 0s linear 0s, opacity 2s;
+  visibility: hidden;
+  width:800px;
+}
+div.global h3{
+  font-size: 1.2rem;
+  font-size: 19px;
+  font-weight: 200;
+  text-align: center;
+}
+h3{
+  margin-top: 20px;
+}
+
+/*Début Div de gauche (Vos produits)*/
+div.vosProduits{
+  background-color: #fff;
+  border-bottom-left-radius:30px;
+  border-top-left-radius:30px;
+  box-sizing:border-box;
+  float: left;
+  height:100%;
+  overflow-y: scroll;
+  padding-left:25px;
+  padding-right:25px;
+  width:50%;
+}
+
+div.vosProduits h3{
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/*Tableau*/
+.ligne {
+  background:#ddd;
+  height:1px;
+  margin-bottom:10px;
+  margin-top:10px;
+  width:100%;
+}
+.prix {
+  bottom:0px;
+  color:#4488dd;
+  position:absolute;
+  right:0px;
+}
+.small {
+  font-size:12px;
+  font-size:.8rem;
+}
+.table {
+  position:relative;
+}
+.table td{
+padding-left:25px;
+vertical-align:top;
+}
+.table td:first-of-type {
+  width:25%;
+}
+
+/* p#vide{
+  text-align: center;
+  margin: auto;
+}
+JS :
+var vide = id("empty");
+vide.innerHTML = "Votre panier est vide.";
+
+*/
+
+/*Fin div de Gauche*/
+
+/*Début Div de droite (Ajouter produits)*/
+div.ajouterProduits{
+  background:rgb(41, 41, 41);
+  border-bottom-right-radius:30px;
+  border-top-right-radius:30px;
+  color:#eee;
+  float: right;
+  font-size:.9rem;
+  font-size:14px;
+  height:100%;
+  padding-left:25px;
+  padding-right:25px;
+  width:50%;
+}
+div.infoProduit{
+  height: 100%;
+  margin-top: 60px;
+  width: 100%;
+}
+
+
+/*Prix + Ref*/
+div.md{
+  height: 80px;
+  width: 100%;
+}
+div.md > div{
+  width: 48%;
+}
+div.md div:first-child{
+  float: left;
+}
+div.md div:last-child{
+  float: right;
+}
+/*Inputs*/
+div.global div.lg{
+  height: auto;
+  width: 100%;
+}
+input {
+  background:rgba(255,255,255,0.1);
+  border-radius: 5px;
+  border: transparent;
+  box-sizing:vborder-box;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 200;
+  height: 40px;
+  line-height: 1.5em;
+  margin: 10px auto;
+  padding: 5px 10px 5px 10px;
+  width: 100%;
+}
+input .mid:first-child{
+  float: left;
+}
+input .mid:last-child{
+  float: left;
+}
+input#randomRef{
+  cursor: not-allowed;
+}
+
+/*Bouton Ajoutez*/
+div.ajouterProduits button{
+  background: none;
+  border-radius: 5px;
+  border: 2px solid #dddddd;
+  color: #fff;
+  cursor: pointer;
+  height: 50px;
+  letter-spacing: 3px;
+  margin: 20px auto;
+  width: 100%;
+}
+div.ajouterProduits button:hover{
+  background-color: #fff;
+  border: none;
+  color: #000;
+  transition: background-color 300ms ease-in;
+}
+span.court{
+  color: grey;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-style: italic;
+}
+
+/*Label, Placeholder*/
+label {
+  font-weight: 200;
+}
+::placeholder{
+  font-size: 14px;
+}
+/*Fin div de droite*/
+
+/*Media Query*/
+@media screen and (max-width: 750px) {
+  body{
+    overflow-y: scroll;
+  }
+  h1{
+    margin: 10px auto;
+  }
+  div.global {
+    border-radius:0px;
+    box-shadow: none;
+    display:block;
+    height: 100vh;
+    margin-top: 50px;
+    width: 100%;
+  }
+  div.ajouterProduits {
+    border-radius:0px;
+    height:auto;
+    padding-bottom:100px;
+    width:100%;
+  }
+  div.vosProduits {
+    border-radius:0px;
+    height: 100%;
+    overflow-y: hidden;
+    padding-bottom:100px;
+    width:100%;
+  }
+  footer{
+    background-color: rgb(41, 41, 41);
+    color: #fff;
+    display: none;
+    font-weight: 200;
+  }
+}
+
+/* Anim Fade In/Out */
+.hidden{
+  opacity: 0;
+  transition: visibility 0s linear 400ms, opacity 400ms;
+  visibility: hidden;
+}
+.visibility{
+  opacity: 1;
+  transition-delay: 800ms;
+  visibility: visible;
+}
+
+/*Footer*/
+footer{
+  bottom: 0;
+  float: left;
+  font-size: 16px;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+footer p {
+  line-height: 50px;
+  text-align: center;
+}
+footer p i:hover{
+  color: red;
+  cursor: none;
+  transition: transform 1s, color 400ms;
+  transform: translateY(-5px)
+}

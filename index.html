@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TP Panier</title>
-    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="main.css">
     <!--Poppins-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,700,700i,800,800i,900,900i" rel="stylesheet">
     <!--Font Awesome-->
@@ -14,8 +14,21 @@
 </head>
 <body>
 
+  <a id="panier">Panier</a>
+
   <button class="myBtn" id="btn">PRODUIT <i class="fas fa-shopping-basket"></i></button>
   <h1>TP - Gestion de stock</h1>
+
+  <table id="tablo" class="hidden">
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Ref</th>
+      <th>Description</th>
+    </tr>
+  </table>
 
   <div class="global">
      <!--Div de droite-->
@@ -52,9 +65,6 @@
      <h3>Vos produits</h3>
      <hr>
    </div>
-<table>
-
-</table>
 </div>
 
 
