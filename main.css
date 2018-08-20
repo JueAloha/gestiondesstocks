@@ -22,28 +22,32 @@ h1{
 
 /* Ajout Siriné*/
 #tablo{
-  border: 3px solid black;
+  border: 1px solid black;
   border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
 }
 
 #tablo th{
-  border: 3px solid black;
+  border: 1px solid black;
   height: 50px;
-  min-width: 100px;
-  max-width: auto;
+  min-width: 50px;
+  font-size: 10px;
+  padding: 0;
+  font-weight: 300;
 }
 
 #tablo td{
-  border: 3px solid black;
+  border: 1px solid black;
   min-height: 60px;
   max-height: auto;
-  min-width: 100px;
-  max-width: 500px;
+  width: 10px;
+  font-size: 10px;
   text-align: center;
 }
 
 #tablo tr {
-  border: 3px solid black;
+  border: 1px solid black;
 }
 
 /*Barre de Scroll*/
@@ -107,7 +111,14 @@ button.myBtn:hover:after {
 }
 
 /*Produits*/
+div.produits {
+  width: 50%;
+  height: 100%;
 
+}
+div.produits:hover{
+  overflow-y: scroll;
+}
 /*Div Global*/
 .global {
   border-radius: 30px;
@@ -152,7 +163,26 @@ div.vosProduits h3{
 }
 
 /*Tableau*/
-.ligne {
+table{
+  width: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .ligne {
   background:#ddd;
   height:1px;
   margin-bottom:10px;
@@ -178,7 +208,7 @@ vertical-align:top;
 }
 .table td:first-of-type {
   width:25%;
-}
+} */
 
 /* p#vide{
   text-align: center;
@@ -303,7 +333,7 @@ label {
     box-shadow: none;
     display:block;
     height: 100vh;
-    margin-top: 50px;
+    margin-top: 75px;
     width: 100%;
   }
   div.ajouterProduits {
@@ -318,6 +348,14 @@ label {
     overflow-y: hidden;
     padding-bottom:100px;
     width:100%;
+  }
+  div.produits{
+    width: 100%;
+    height: auto;
+
+  }
+  div.produits:hover{
+    overflow:hidden;
   }
   footer{
     background-color: rgb(41, 41, 41);

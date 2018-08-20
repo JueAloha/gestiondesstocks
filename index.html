@@ -14,21 +14,12 @@
 </head>
 <body>
 
-  <a id="panier">Panier</a>
+  <!-- <a id="panier">Panier</a> -->
 
   <button class="myBtn" id="btn">PRODUIT <i class="fas fa-shopping-basket"></i></button>
   <h1>TP - Gestion de stock</h1>
 
-  <table id="tablo" class="hidden">
-    <tr>
-      <th></th>
-      <th></th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Ref</th>
-      <th>Description</th>
-    </tr>
-  </table>
+
 
   <div class="global">
      <!--Div de droite-->
@@ -63,13 +54,23 @@
 <!--Div de gauche-->
    <div class="produits">
      <h3>Vos produits</h3>
-     <hr>
+     <!-- <hr> -->
+     <table id="tablo" class="visibility">
+      <tr>
+        <th><i class="fas fa-pen-alt"></i></th>
+        <th><i class="far fa-trash-alt"></i></th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Ref</th>
+        <th>Description</th>
+      </tr>
+    </table>
    </div>
 </div>
-
 
   <footer>
     <p>Made with <i class="far fa-heart"></i> by Julie | Siriné | Cindy.</p>
   </footer>
+
 </body>
 </html>
